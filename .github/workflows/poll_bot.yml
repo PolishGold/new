@@ -1,6 +1,10 @@
 name: Poll BabyBitcoin
 
 on:
+  # ręczne wyzwalanie z UI
+  workflow_dispatch:
+
+  # wywołanie co minutę
   schedule:
     - cron: "* * * * *"
 
@@ -24,7 +28,8 @@ jobs:
       FIXED_BNB_USD:      "795"
       FIXED_ETH_USD:      ""
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
