@@ -1,7 +1,14 @@
 name: Poll BabyBitcoin
 
 on:
+  # wywołanie po każdym pushu do main (żeby testować od razu)
+  push:
+    branches: [ main ]
+
+  # ręczne wyzwalanie w UI
   workflow_dispatch:
+
+  # harmonogram cron (co minutę UTC)
   schedule:
     - cron: "* * * * *"
 
